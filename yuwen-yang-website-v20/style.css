@@ -1,0 +1,916 @@
+
+:root{--paper:#e0e0dc;--ink:#151515;--muted:#4f4b46;--page-gutter:4vw;--accent:#b3aea8;--serif:'Cormorant Garamond',Georgia,serif;--nav-serif:'Adobe Garamond Pro','EB Garamond',Georgia,serif;--sans:'Poppins',Arial,sans-serif}
+*{box-sizing:border-box} html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}a{color:inherit}button{font:inherit}.skip{position:absolute;left:-9999px;top:5px;z-index:100}.skip:focus{left:20px;background:#fff;padding:10px}
+.site-header{position:relative;z-index:25;min-height:106px;padding:22px var(--page-gutter);display:flex;align-items:center;justify-content:space-between;gap:30px;background:var(--paper)}
+.logo{font-family:var(--serif);font-size:clamp(32px,calc(1.2vw + 16px),37.6px);line-height:1.4;text-decoration:none;letter-spacing:0;font-weight:500;white-space:nowrap}
+.site-nav{display:flex;align-items:center;gap:27px}.site-nav>a,.drop-trigger{color:#111;display:block;font-family:var(--nav-serif);font-size:clamp(19.2px,calc(.24vw + 16px),20.32px);font-weight:700;text-decoration:none;border:0;background:transparent;cursor:pointer;padding:10px 0;line-height:1.4}
+.site-nav>a:hover,.drop-trigger:hover,.drop-menu a:hover{text-decoration:underline;text-underline-offset:4px}.drop-trigger span{font-size:17px;margin-left:3px}.nav-drop{position:relative}.drop-menu{position:absolute;top:calc(100% - 2px);left:-22px;width:max-content;min-width:225px;background:var(--paper);box-shadow:0 8px 22px #00000018;padding:14px 18px;display:none;flex-direction:column;gap:5px}.drop-menu a{font-size:18px;text-decoration:none;padding:8px 3px}
+.nav-drop:hover .drop-menu,.nav-drop:focus-within .drop-menu,.nav-drop.is-open .drop-menu{display:flex}.nav-toggle{display:none;cursor:pointer;padding:8px;border:0;background:transparent}.nav-toggle span{display:block;width:24px;height:1px;margin:6px 0;background:#222}
+/* Homepage — Squarespace screenshot alignment (v4) */
+.home-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:8.6vw;align-items:stretch;padding:4.15vw var(--page-gutter) 0;min-height:520px;max-width:1850px;margin:auto}
+.home-image img{display:block;width:100%;height:100%;min-height:470px;max-height:none;object-fit:cover;object-position:center}
+.home-statement{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;padding:0}
+.hero-intro{display:flex;align-items:center;gap:3.4vw;margin:0 0 40px}
+.hero-intro h4{font-family:var(--serif);font-size:clamp(25.6px,calc(16px + .72vw),29px);line-height:1.366;font-weight:500;white-space:nowrap;margin:0}
+.hero-rule{border-top:1px solid #222;flex:1;min-width:20px;width:auto;margin:0}
+.home-statement h1{font-family:var(--serif);font-size:clamp(45px,calc(16px + 3.6vw),80.8px);font-weight:500;line-height:1.232;letter-spacing:0;margin:0}
+.home-statement h1 em{font-weight:500}
+.scroll-down{font-family:var(--serif);font-size:clamp(40px,4.3vw,70px);line-height:1.05;text-align:center;text-decoration:none;margin-top:34px}
+.section-label{text-align:center;padding:94px 0 80px;font-family:'EB Garamond',Georgia,serif;font-size:clamp(24px,calc(16px + .6vw),27px);font-style:italic;font-weight:600;line-height:1.35}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px;row-gap:16px;margin:0 var(--page-gutter) 80px}.project-card{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:#ebeae8;text-decoration:none}.project-card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease}.project-cover{position:absolute;inset:0;background:#000;opacity:0;transition:opacity .24s ease}.project-title{position:absolute;z-index:1;inset:0;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#fff;font-family:var(--serif);font-size:clamp(25px,3vw,47px);font-weight:500;line-height:1.1;opacity:0;transition:opacity .24s ease}.project-card:hover img{transform:scale(1.035)}.project-card:hover .project-cover,.project-card:focus-visible .project-cover{opacity:.8}.project-card:hover .project-title,.project-card:focus-visible .project-title{opacity:1}
+.site-footer{background:#181818;color:#fff;padding:70px var(--page-gutter) 75px}.foot-inner{max-width:1300px;margin:auto}.site-footer h2{font-family:var(--serif);font-size:clamp(30px,4vw,50px);font-weight:500;margin:0 0 22px}.site-footer p{margin:5px 0;font-size:14px}.site-footer a{text-decoration:none}.site-footer a:hover{text-decoration:underline}
+.content-panel{max-width:1450px;margin:0 auto;padding:8vw var(--page-gutter) 12vw}.content-panel h1,.content-panel h2,.content-panel h3,.content-panel h4{font-family:var(--serif);font-weight:500;line-height:1.16}.content-panel h1{font-size:clamp(42px,6vw,84px)}.content-panel h2{font-size:clamp(30px,4vw,54px)}.content-panel h3{font-size:clamp(25px,3vw,42px)}.content-panel h4{font-size:clamp(23px,2.7vw,35px)}.content-panel h1,.content-panel h2,.content-panel h3,.content-panel h4{margin:20px 0}.prose{max-width:980px}.prose p{margin:12px 0 21px}.prose a{text-underline-offset:3px}.bio-panel{min-height:650px}.bio-prose{max-width:1000px}.bio-prose h1{font-style:italic}.featured-prose{margin-bottom:45px}.project-page .project-heading{text-align:center;padding-bottom:30px}.project-heading h1{margin:0 0 35px}.overline{text-transform:uppercase;letter-spacing:.24em;font-size:11px;color:#666}.project-feature img{width:100%;display:block;max-height:800px;object-fit:contain;background:#f4f3f1;margin:10px auto 55px}.project-page>.prose{margin:0 auto 50px}.related-page{text-align:center;margin:24px 0 40px}
+.photo-grid,.document-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:35px 0 55px;align-items:start}.photo-grid img,.document-grid img{width:100%;height:auto;display:block}.photo-grid img{max-height:690px;object-fit:contain}.document-grid figure{margin:0}.document-grid img{object-fit:contain;max-height:600px}.writing-cards{margin:55px 0}.stage-panel h1{text-align:center;margin-bottom:30px}.slider{max-width:1150px;margin:50px auto}.slides{position:relative}.slide{display:none;margin:0}.slide.is-current{display:block}.slide img{display:block;width:100%;max-height:700px;object-fit:contain;aspect-ratio:4/3;background:#f2f0ed}.missing-photo{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:45px;background:#edeae6;color:#6b6661;font-size:14px}.slide figcaption{font-family:var(--serif);font-size:clamp(22px,3vw,36px);margin-top:20px;text-align:center}.slider-controls{display:flex;justify-content:center;align-items:center;gap:35px;margin-top:14px}.slider-controls button{border:0;background:none;font-family:var(--serif);font-size:45px;cursor:pointer;line-height:1}.slider-count{font-size:13px}
+@media(max-width:850px){.site-header{min-height:78px;padding:18px 5vw}.nav-toggle{display:block}.site-nav{display:none;position:absolute;left:0;right:0;top:100%;padding:18px 5vw 28px;flex-direction:column;align-items:stretch;gap:3px;background:var(--paper);box-shadow:0 14px 24px #00000012}.site-nav.nav-open{display:flex}.drop-menu{position:relative;box-shadow:none;top:auto;left:auto;padding:0 15px 10px;width:auto}.nav-drop:hover .drop-menu{display:none}.nav-drop.is-open .drop-menu{display:flex}.home-hero{grid-template-columns:1fr 1fr;gap:24px;padding:25px 5vw 20px;min-height:0}.home-image img{min-height:370px}.home-statement h1{font-size:clamp(30px,4vw,42px);line-height:1.18}.hero-intro{gap:17px;margin-bottom:22px}.section-label{padding:60px 0 50px}.logo{font-size:32px}}
+@media(max-width:600px){.home-hero{display:flex;flex-direction:column;gap:24px}.home-image img{min-height:0;max-height:none;height:auto;aspect-ratio:3/4;object-fit:cover}.home-statement h1{font-size:clamp(37px,9vw,55px)}.hero-intro{margin-bottom:20px}.section-label{padding:50px 0 44px}.portfolio-grid,.photo-grid,.document-grid{grid-template-columns:1fr;row-gap:16px}.portfolio-grid{margin:0 5vw 50px}.content-panel{padding:60px 5vw 80px}.project-card .project-cover{opacity:.35}.project-card .project-title{opacity:1;font-size:30px}.site-footer{padding:55px 5vw}.slide figcaption{font-size:25px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Research page recreation, matched to saved Squarespace research screenshots (v5) */
+.research-page .site-nav > a[aria-current="page"] {text-decoration: underline;text-underline-offset: 15px;text-decoration-thickness: 1px;}
+.research-panel {width: min(1416px, calc(100% - (2 * var(--page-gutter)))); max-width: none; margin: 0 auto; padding: 66px 0 110px;}
+.research-title-row {display: flex; align-items: center; gap: 30px; width: calc(100% - 28px);}
+.research-title-row h1 {font-family: 'EB Garamond', Georgia, serif; font-weight: 700; font-style: italic; font-size: 36.5px; line-height: 1.2; white-space: nowrap; margin: 0;}
+.research-rule {height: 0; flex: 1; border-top: 2px solid #292929;}
+.research-copy {margin-top: 34px; max-width: none; width: calc(100% - 28px);}
+.research-copy p {margin: 0; font-family: 'EB Garamond', Georgia, serif; font-weight: 700; font-size: clamp(18px, 1.2vw, 23.2px); line-height: 1.70; color: #111;}
+.research-copy em {font-style: italic;}
+.research-thesis-action {display: flex; justify-content: center; margin-top: 30px; width: calc(100% - 28px);}
+.research-thesis-button {display: inline-flex; width: 160px; height: 90px; align-items: center; justify-content: center; border: 2px solid #253a56; color: #253a56; font-family: 'EB Garamond', Georgia, serif; font-size: 23px; font-weight: 700; line-height: 1; text-decoration: none; transition: background-color .18s ease, color .18s ease;}
+.research-thesis-button:hover, .research-thesis-button:focus-visible {background: #253a56; color: #fff;}
+.research-section-divider, .research-gallery-divider {border: 0; border-top: 2px solid #3a3a3a;}
+.research-section-divider {width: calc(100% - 28px);margin: 40px 0 0;}
+.research-gallery {display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 26px; width: calc(100% - 54px); margin: 68px 0 0 -8px;}
+.research-gallery figure {margin: 0; min-width: 0; line-height: 0;}
+.research-gallery img {width: 100%; height: auto; object-fit: contain; display: block;}
+.research-gallery-divider {width: calc(100% - 54px); margin: 26px 0 0 -8px;}
+@media (max-width: 1050px) {
+  .research-panel {padding-top: 55px;}
+  .research-title-row h1 {font-size: 31px;}
+  .research-copy p {font-size: 19px; line-height: 1.66;}
+  .research-gallery {width: 100%; margin-left: 0; gap: 18px;}
+  .research-gallery-divider {width: 100%; margin-left: 0;}
+}
+@media (max-width: 700px) {
+  .research-panel {width: calc(100% - 10vw);padding: 48px 0 80px;}
+  .research-title-row {gap: 15px;width: 100%;}
+  .research-title-row h1 {font-size: 27px;white-space: normal;}
+  .research-copy {margin-top: 24px;width: 100%;}
+  .research-copy p {font-size: 19px;line-height: 1.55;}
+  .research-thesis-action {margin-top: 28px;width: 100%;}
+  .research-thesis-button {width: 140px;height: 65px;font-size: 21px;}
+  .research-section-divider {margin-top: 35px;width: 100%;}
+  .research-gallery {grid-template-columns: 1fr; gap: 28px; margin-top: 40px;}
+  .research-gallery img {max-width: 100%;} 
+}
+
+/* v6: Research refinements after screenshots 2026-10-26 at 8 PM. Only research page. */
+@media (min-width: 1051px) {
+  .research-title-row h1 {font-size: 32px;}
+  .research-copy p {font-size: clamp(18px, 1.00vw, 20.5px);line-height: 1.70;}
+  .research-thesis-button {width: 136px;height: 72px;font-size: 20px;}
+  /* Keep the divider edges consistent with the photo row, as in the saved reference. */
+  .research-section-divider {width: calc(100% - 54px);margin-left: -8px;}
+  .research-title-row {width: calc(100% - 28px);}
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  .research-copy p {font-size: 18px;line-height: 1.65;}
+  .research-thesis-button {width: 136px;height: 72px;font-size: 20px;}
+  .research-section-divider {width: 100%;margin-left: 0;}
+}
+@media (max-width: 700px) {
+  .research-title-row h1 {font-size: 25px;}
+  .research-copy p {font-size: 17px;line-height: 1.58;}
+  .research-thesis-button {width: 128px;height: 64px;font-size: 19px;}
+  .research-section-divider {width: 100%;margin-left: 0;}
+}
+
+
+/* v7: Navigation matched to the saved Squarespace 7.1, right-aligned header.
+   This changes only the shared navigation, not any page content/layout. */
+@media (min-width: 851px) {
+  .site-nav {
+    gap: 1.5vw; /* original Squarespace nav-right item spacing */
+    align-items: center;
+  }
+  .site-nav > a,
+  .site-nav .drop-trigger {
+    font-family: var(--nav-serif);
+    font-weight: 700;
+    font-size: clamp(20.5px, 1.38vw, 29px);
+    line-height: 1.3;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  .site-nav .drop-trigger { display: inline-flex; align-items: center; }
+  /* Original header folders have right-aligned, plain text, rather than a floating card. */
+  .site-nav .nav-drop { position: relative; }
+  .site-nav .drop-menu {
+    position: absolute;
+    top: 100%;
+    right: -1em;
+    left: auto;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    min-width: 200px;
+    padding: calc(.5em + 7px) 1em .5em;
+    margin: 0;
+    gap: 5px;
+    background: var(--paper);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: right;
+    z-index: 200;
+  }
+  .site-nav .drop-menu a {
+    padding: 0;
+    display: block;
+    font-family: var(--nav-serif);
+    font-weight: 700;
+    font-size: clamp(20.5px, 1.38vw, 29px);
+    line-height: 1.3;
+    white-space: nowrap;
+    text-align: right;
+    text-decoration: none;
+  }
+  .site-nav .drop-menu a:hover,
+  .site-nav .drop-menu a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .site-nav .nav-drop:hover > .drop-menu,
+  .site-nav .nav-drop:focus-within > .drop-menu,
+  .site-nav .nav-drop.is-open > .drop-menu { display: flex; }
+  .site-nav .drop-trigger::after { content: none; }
+  .site-nav .drop-trigger:hover,
+  .site-nav .drop-trigger:focus-visible { text-decoration: none; }
+  /* The original logo and nav move slightly lower as the viewport grows. */
+  .site-header > .logo {
+    font-size: clamp(37.6px, 2.2vw, 48px);
+  }
+  .site-header > .logo, .site-header > .site-nav {
+    position: relative;
+    top: clamp(5px, calc(3.3vw - 49.5px), 18px);
+  }
+}
+@media (max-width: 850px) {
+  /* Keep collapsible mobile folders usable even without the desktop arrow. */
+  .site-nav .drop-trigger::after {
+    content: '⌄';
+    font-size: 17px;
+    display: inline-block;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .site-nav .drop-menu {background: var(--paper); box-shadow: none; border:0;}
+  .site-nav .nav-drop:not(.is-open) .drop-menu {display:none;}
+  .site-nav .nav-drop.is-open .drop-menu {display:flex;}
+}
+
+
+/* v8 Bio page: measured against the provided original Squarespace screenshot.
+   Keeps navigation, colors, Research page and homepage unchanged. */
+@media (min-width: 851px) {
+ .bio-page .bio-panel {
+  box-sizing: border-box;
+  max-width: none;
+  width: 73.72%;
+  margin-left: 16.67%;
+  margin-right: 9.61%;
+  padding: 168px 0 72px;
+  min-height: 0;
+ }
+}
+.bio-panel .bio-heading-row {
+ display: grid;
+ grid-template-columns: 28% minmax(0,1fr);
+ align-items: center;
+ margin: 0 0 51px;
+}
+.bio-panel .bio-heading-row h1 {
+ font-family: 'EB Garamond', Georgia, serif;
+ font-size: 32px;
+ font-weight: 700;
+ font-style: italic;
+ line-height: 1.25;
+ margin: 0;
+}
+.bio-panel .bio-heading-rule {width:100%; border-top:1.5px solid #292929; transform:translateY(-8px);}
+.bio-panel .bio-statement {
+ font-family: 'Cormorant Garamond', Georgia, serif;
+ font-style: italic;
+ font-weight: 500;
+ font-size: 52px;
+ line-height: 1.15;
+ margin: 0 0 47px;
+}
+.bio-panel .bio-statement em {font-style: italic; font-weight:500;}
+.bio-panel .bio-copy p {
+ font-family: 'EB Garamond', Georgia, serif;
+ font-size: 25px;
+ font-weight: 700;
+ line-height: 1.65;
+ letter-spacing: 0;
+ margin: 0;
+}
+.bio-panel .bio-cv-action {
+ display: flex;
+ justify-content: center;
+ margin-top: 32px;
+}
+.bio-panel .bio-cv-button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-sizing: border-box;
+ width: 258px;
+ height: 82px;
+ border: 2px solid #253a56;
+ color: #253a56;
+ background: transparent;
+ font-family: 'EB Garamond', Georgia, serif;
+ font-weight:700;
+ font-size: 21px;
+ text-decoration: none;
+ transition: color .18s ease, background .18s ease;
+}
+.bio-panel .bio-cv-button:hover, .bio-panel .bio-cv-button:focus-visible {color:#fff;background:#253a56;}
+.bio-panel .bio-bottom-rule {
+ border:0;
+ border-top:1.5px solid #292929;
+ width:100%;
+ margin:30px 0 0;
+}
+@media (max-width: 850px) {
+ .bio-page .bio-panel {width: min(90%, 700px);margin:0 auto;padding:65px 0 75px;min-height:0;max-width:none;}
+ .bio-panel .bio-heading-row {grid-template-columns:30% 1fr;gap:12px;margin-bottom:32px;}
+ .bio-panel .bio-heading-row h1 {font-size:29px;}
+ .bio-panel .bio-statement {font-size:clamp(38px,5.5vw,51px);margin-bottom:25px;}
+ .bio-panel .bio-copy p {font-size:20px;line-height:1.7;}
+ .bio-panel .bio-cv-button {width:205px;height:72px;font-size:20px;}
+}
+@media (max-width: 600px) {
+ .bio-page .bio-panel {padding:48px 0 60px;}
+ .bio-panel .bio-heading-row {grid-template-columns:auto 1fr;gap:26px;margin-bottom:28px;}
+ .bio-panel .bio-heading-row h1 {font-size:27px;}
+ .bio-panel .bio-statement {font-size:39px;margin-bottom:22px;}
+ .bio-panel .bio-copy p {font-size:19px;line-height:1.63;}
+ .bio-panel .bio-cv-action {margin-top:30px;}
+ .bio-panel .bio-cv-button {width:170px;height:66px;}
+}
+
+/* Highlight the Bio tab only on the Bio page. */
+.bio-page .site-nav > a[aria-current="page"] {text-decoration:underline;text-underline-offset:15px;text-decoration-thickness:1px;}
+
+
+/* v9 — Biographical page scaled to the user's smaller Squarespace reference.
+   Applies only to the Bio panel; keeps other pages as they were in v8. */
+@media (min-width: 851px) {
+ .bio-page .bio-panel {
+  width: 69.10%;
+  margin-left: 15.63%;
+  margin-right: 15.27%;
+  padding-top: 158px;
+  padding-bottom: 158px;
+ }
+ .bio-panel .bio-heading-row {
+  margin-bottom: 46px;
+ }
+ .bio-panel .bio-heading-row h1 {font-size: 30px;}
+ .bio-panel .bio-statement {font-size: 48px; margin-bottom: 42px;}
+ .bio-panel .bio-copy p {font-size: 23.5px; line-height:1.65;}
+ .bio-panel .bio-cv-action {margin-top:30px;}
+ .bio-panel .bio-cv-button {width: 242px; height: 77px; font-size: 20px;}
+ .bio-panel .bio-bottom-rule {margin-top: 28px;}
+}
+/* Research gallery: equal breathing space between the photographs and both rules. */
+@media (min-width: 701px) {
+ .research-gallery {margin-top: 48px;}
+ .research-gallery-divider {margin-top: 48px;}
+ .research-panel {padding-top: 82px; padding-bottom: 82px;}
+}
+/* Navigation: an underline represents the CURRENT page only, not hover state. */
+.site-nav > a:hover,
+.site-nav > a:focus-visible,
+.site-nav .drop-trigger:hover,
+.site-nav .drop-trigger:focus-visible,
+.site-nav .drop-menu a:hover,
+.site-nav .drop-menu a:focus-visible {text-decoration: none !important;}
+.site-nav > a[aria-current="page"],
+.site-nav > a[aria-current="page"]:hover,
+.site-nav > a[aria-current="page"]:focus-visible {
+ text-decoration: underline !important;
+ text-underline-offset: 15px;
+ text-decoration-thickness: 1px;
+}
+
+
+/* Stage management carousel, reconstructed from the original Squarespace reel */
+.stage-page,.stage-page .site-header{background:#fff}
+.stage-page .drop-menu{background:#fff}
+.stage-page .site-nav > a[aria-current='page'] { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:14px; }
+.stage-page .stage-panel{max-width:none;margin:0;padding:12vw 0 10vmax;overflow:hidden}
+.visually-hidden{position:absolute!important;clip:rect(0,0,0,0);clip-path:inset(50%);height:1px;width:1px;overflow:hidden;white-space:nowrap}
+.stage-carousel{
+ --stage-gap:22px;
+ --stage-inset:4vw;
+ --stage-card-width:calc((100vw - 10.6vw - 2 * var(--stage-gap))/3);
+ position:relative;width:100%;overflow:hidden;outline-offset:4px
+}
+.stage-viewport{width:100%;overflow:hidden}
+.stage-track{display:flex;gap:var(--stage-gap);align-items:flex-start;transition:transform .46s ease;will-change:transform}
+.stage-card{flex:0 0 var(--stage-card-width);width:var(--stage-card-width);margin:0;min-width:0}
+.stage-card img{display:block;width:100%;aspect-ratio:1 / 1;height:auto;object-fit:cover;object-position:50% 50%}
+.stage-card figcaption{font-family:'Cormorant Garamond','EB Garamond',Georgia,serif;font-size:clamp(22px,1.54vw,31.5px);font-weight:500;line-height:1.2;text-align:left;margin:26px 0 0;color:#171717;max-width:75%}
+.stage-arrow{position:absolute;top:calc(var(--stage-card-width) / 2);transform:translateY(-50%);width:80px;height:80px;border:0;border-radius:50%;background:rgba(35,54,80,.62);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:51px;line-height:1;font-weight:200;cursor:pointer;z-index:4;transition:background .15s ease}
+.stage-arrow:hover{background:rgba(35,54,80,.84)}
+.stage-arrow:focus-visible{outline:3px solid #142f53;outline-offset:4px}
+.stage-arrow-prev{left:5vw}.stage-arrow-next{right:5vw}
+@media(max-width:1000px){
+ .stage-page .stage-panel{padding-top:90px;padding-bottom:95px}
+ .stage-carousel{--stage-gap:18px;--stage-inset:5vw;--stage-card-width:calc((100vw - 13vw - 2 * var(--stage-gap))/2)}
+ .stage-arrow{width:54px;height:54px;font-size:34px}
+}
+@media(max-width:600px){
+ .stage-page .stage-panel{padding:65px 0 75px}
+ .stage-carousel{--stage-gap:16px;--stage-inset:6vw;--stage-card-width:78vw}
+ .stage-card figcaption{font-size:20px;margin-top:15px;line-height:1.25}
+ .stage-arrow{width:43px;height:43px;font-size:29px}
+ .stage-arrow-prev{left:2vw}.stage-arrow-next{right:2vw}
+}
+@media(prefers-reduced-motion:reduce){.stage-track{transition:none}}
+
+
+/* v11 Fanletter project page, recreated from the original saved Squarespace grid. */
+.fanletter-page{--fanpaper:#e0e0dc;background:var(--fanpaper)}
+.fanletter-page .site-header{position:absolute;top:0;left:0;width:100%;background:transparent;z-index:30}
+.fanletter-page .logo,.fanletter-page .site-nav>a,.fanletter-page .site-nav .drop-trigger{color:#fff}
+.fanletter-page .nav-toggle span{background:#fff}
+.fanletter-page .site-nav .drop-menu{background:#272321;color:#fff}
+.fanletter-page .site-nav .drop-menu a{color:#fff}
+.fanletter-hero{min-height:100svh;position:relative;background-image:url('assets/fanletter-_DSC0173.JPG');background-position:center center;background-size:cover;display:flex;align-items:center;color:#fff}
+.fanletter-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.32),rgba(0,0,0,.12));pointer-events:none}
+.fanletter-hero-content{position:relative;z-index:1;width:min(1500px,calc(100% - 8vw));margin:0 auto;padding-top:60px}
+.fanletter-eyebrow{font:700 italic clamp(19px,1.4vw,27px)/1.4 'EB Garamond',Georgia,serif;margin:0 0 48px}
+.fanletter-hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,4.7vw,104px);font-weight:500;line-height:1.05;letter-spacing:0;max-width:1200px;margin:0 0 54px}
+.fanletter-scroll{font:700 italic 23px/1.3 'EB Garamond',Georgia,serif;color:#fff;text-decoration:none}
+.fanletter-scroll:hover{text-decoration:none;opacity:.8}
+.fanletter-gallery{--gallery-width:min(1500px,calc(100vw - 8vw));position:relative;width:var(--gallery-width);max-width:1500px;margin:0 auto;padding-top:110px;padding-bottom:0;display:grid;grid-template-columns:repeat(24,minmax(0,1fr));grid-template-rows:repeat(58,minmax(calc(var(--gallery-width)*.0215),auto));gap:11px;align-items:stretch}
+.fanletter-gallery figure{margin:0;min-width:0;overflow:hidden}
+.fanletter-gallery figure img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+.fanletter-b1{grid-area:1/3/10/14}.fanletter-quote{grid-area:10/3/12/14;display:flex;align-items:center;justify-content:center;text-align:center;margin:0;padding:0 8px;font:600 italic clamp(15px,1.16vw,21px)/1.65 'EB Garamond',Georgia,serif;color:#111}
+.fanletter-b2{grid-area:12/3/21/14}.fanletter-b3{grid-area:1/15/17/25}.fanletter-b4{grid-area:22/3/31/14}.fanletter-notes{grid-area:32/3/50/14}.fanletter-excerpt{grid-area:18/15/26/25}.fanletter-b5{grid-area:26/15/41/25}.fanletter-b6{grid-area:41/15/59/25}.fanletter-video{grid-area:50/3/59/14;position:relative;align-self:start}
+.fanletter-notes,.fanletter-excerpt{font-family:'EB Garamond',Georgia,serif;font-size:clamp(18px,1.4vw,25px);font-weight:700;line-height:1.72;min-width:0}
+.fanletter-notes p{margin:0 0 24px}.fanletter-notes p:first-child{margin-bottom:18px}.fanletter-notes strong{font-weight:700}
+.fanletter-excerpt{font-style:italic;font-size:clamp(17px,1.26vw,22px);line-height:1.65}.fanletter-excerpt p{margin:0 0 21px}
+.fanletter-player{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#161616;cursor:pointer}
+.fanletter-video-status{font:14px/1.45 Arial,sans-serif;margin:10px 0;color:#555}
+.fanletter-video-status:empty{display:none}
+.fanletter-pagination{max-width:1700px;margin:150px auto 50px;padding:0 4vw;display:flex;justify-content:space-between;align-items:center;gap:30px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,2.6vw,57px);line-height:1.2}
+.fanletter-pagination a{text-decoration:none;display:flex;gap:20px;align-items:center}.fanletter-pagination a:hover{opacity:.65}
+.fanletter-pagination span{font-family:Georgia,serif;font-weight:300}
+@media(max-width:850px){
+ .fanletter-page .site-nav{background:#262222}.fanletter-page .site-nav>a,.fanletter-page .site-nav .drop-trigger{color:#fff}
+ .fanletter-hero-content{padding:110px 0 40px}.fanletter-hero h1{font-size:clamp(47px,6vw,75px)}
+ .fanletter-gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:22px;width:calc(100% - 10vw);padding-top:60px}
+ .fanletter-gallery>figure,.fanletter-gallery>.fanletter-quote,.fanletter-gallery>.fanletter-notes,.fanletter-gallery>.fanletter-excerpt,.fanletter-gallery>.fanletter-video{grid-area:auto;}
+ .fanletter-gallery figure{height:auto}.fanletter-gallery figure img{width:100%;height:auto;object-fit:contain}
+ .fanletter-quote{min-height:90px;font-size:18px}.fanletter-notes,.fanletter-excerpt{font-size:19px;line-height:1.6}
+ .fanletter-b1{order:1}.fanletter-quote{order:2}.fanletter-b2{order:3}.fanletter-b3{order:4}.fanletter-b4{order:5}.fanletter-excerpt{order:6}.fanletter-b5{order:7}.fanletter-notes{order:8}.fanletter-b6{order:9}.fanletter-video{order:10}
+ .fanletter-gallery>.fanletter-excerpt,.fanletter-gallery>.fanletter-notes,.fanletter-gallery>.fanletter-video,.fanletter-gallery>.fanletter-quote{grid-column:span 2}
+ .fanletter-pagination{margin:70px auto 40px;font-size:30px}
+}
+@media(max-width:600px){
+ .fanletter-hero{min-height:100svh}.fanletter-hero-content{width:90%}.fanletter-hero h1{font-size:clamp(43px,10vw,64px)}.fanletter-eyebrow{margin-bottom:24px}
+ .fanletter-gallery{grid-template-columns:1fr;width:90%;gap:24px}
+ .fanletter-gallery>figure,.fanletter-gallery>.fanletter-quote,.fanletter-gallery>.fanletter-notes,.fanletter-gallery>.fanletter-excerpt,.fanletter-gallery>.fanletter-video{grid-column:1/-1}
+ .fanletter-gallery figure img{width:100%;height:auto}
+ .fanletter-gallery .fanletter-b1{order:1}.fanletter-gallery .fanletter-quote{order:2}.fanletter-gallery .fanletter-b2{order:3}.fanletter-gallery .fanletter-b3{order:4}.fanletter-gallery .fanletter-b4{order:5}.fanletter-gallery .fanletter-excerpt{order:6}.fanletter-gallery .fanletter-b5{order:7}.fanletter-gallery .fanletter-notes{order:8}.fanletter-gallery .fanletter-b6{order:9}.fanletter-gallery .fanletter-video{order:10}
+ .fanletter-pagination{display:grid;gap:24px;margin-top:60px;padding:0 5vw;font-size:27px}
+}
+
+/* v11 late pass, measured against original screenshots at 2048px. */
+@media (min-width: 851px){
+ .fanletter-hero-content{width:min(1644px,calc(100% - 8vw))}
+ .fanletter-hero h1{font-size:clamp(65px,4vw,84px);max-width:1500px}
+ .fanletter-gallery{
+  --gallery-width:min(1644px,80vw);
+  width:var(--gallery-width);max-width:none;
+  margin-left:max(6vw, calc((100vw - 1644px)/2 + 50px));margin-right:0;
+  grid-template-rows:repeat(58,calc(var(--gallery-width) * .0215));
+ }
+ .fanletter-b1{grid-area:1/1/10/13}.fanletter-quote{grid-area:10/1/12/13}.fanletter-b2{grid-area:12/1/21/13}
+ .fanletter-b3{grid-area:1/14/17/25}.fanletter-b4{grid-area:22/1/31/13}
+ .fanletter-notes{grid-area:32/1/50/13}.fanletter-excerpt{grid-area:18/14/26/25}
+ .fanletter-b5{grid-area:26/14/41/25}.fanletter-b6{grid-area:41/14/59/25}
+ .fanletter-video{grid-area:50/1/59/13}
+ .fanletter-notes{font-size:clamp(18px,1.16vw,23px);line-height:1.6}
+ .fanletter-excerpt{font-size:clamp(17px,1.12vw,21px)}
+}
+
+@media(min-width:851px){
+ .fanletter-hero-content{transform:translateY(-50px)}
+ .fanletter-gallery .fanletter-b3,.fanletter-gallery .fanletter-excerpt,.fanletter-gallery .fanletter-b5,.fanletter-gallery .fanletter-b6{position:relative;left:20px;width:calc(100% - 20px)}
+}
+@media(max-width:850px){.fanletter-title-break{display:none}}
+
+/* v12: prevent scrollbar-width changes and cross-page smooth-scroll jitters. */
+html{scroll-behavior:auto;scrollbar-gutter:stable}
+.site-nav>a,.site-nav .drop-trigger{transition:none}
+/* v12: Her Rage recreation, following the saved Squarespace desktop layout. */
+.rage-page{background:var(--paper)}
+.rage-page .site-header{position:absolute;inset:0 0 auto 0;width:100%;background:transparent;z-index:30}
+.rage-page .logo,.rage-page .site-nav>a,.rage-page .site-nav .drop-trigger{color:#fff}
+.rage-page .site-nav .drop-menu{background:#24201f;color:#fff}
+.rage-page .site-nav .drop-menu a{color:#fff}
+.rage-page .nav-toggle span{background:#fff}
+.rage-hero{min-height:100svh;position:relative;background-image:url('assets/index-baa203c21d58-DSC03893.jpg');background-size:cover;background-position:center center;display:flex;align-items:center;color:white}
+.rage-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 85%);pointer-events:none}
+.rage-hero-content{position:relative;z-index:1;width:min(1250px,calc(100% - 24vw));margin-left:12vw;margin-right:auto;transform:translateY(53px)}
+.rage-eyebrow{font:700 italic clamp(18px,1.38vw,24px)/1.4 'EB Garamond',Georgia,serif;margin:0 0 54px}
+.rage-hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(52px,4.7vw,85px);font-weight:500;line-height:1.16;letter-spacing:0;max-width:1190px;margin:0 0 55px}
+.rage-scroll{font:700 italic 23px/1.3 'EB Garamond',Georgia,serif;text-decoration:none;color:#fff}
+.rage-scroll:hover{opacity:.8;text-decoration:none}
+.rage-sketch-section{padding:120px 0 120px}
+.rage-sketch-grid{width:min(1265px,calc(100% - 23vw));margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,9.7vw,170px);align-items:start}
+.rage-sketch-grid figure{margin:0;min-width:0}
+.rage-sketch-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.rage-sketch-grid figcaption{margin:18px -20px 0;text-align:center;font:700 italic clamp(18px,1.42vw,24px)/1.35 'EB Garamond',Georgia,serif}
+.rage-writing-ref{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,2vw,33px);font-weight:500;line-height:1.35;margin:72px 5vw 0}
+.rage-writing-ref a{color:#2857df;text-underline-offset:6px}
+.rage-story{width:min(1320px,calc(100% - 18vw));margin:0 auto 0 12vw;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:9.4vw;align-items:start}
+.rage-story-left,.rage-story-right{min-width:0}
+.rage-photo{margin:0;display:block}
+.rage-photo img{width:100%;height:auto;display:block;object-fit:contain}
+.rage-dance img{width:100%;aspect-ratio:0.79;object-fit:cover}
+.rage-red-costume{margin:22px 0 14px}
+.rage-text{font-family:'EB Garamond',Georgia,serif;font-size:clamp(19px,1.38vw,25px);font-weight:700;line-height:1.75;color:#0c0c0c}
+.rage-text p{margin:0 0 24px}
+.rage-dialogue{margin:60px 0 70px}
+.rage-interview{margin-top:50px}
+.rage-press{font-family:Arial,'Noto Sans CJK SC',sans-serif;font-size:clamp(16px,1.35vw,22px);font-weight:500;line-height:1.82;color:#131313}
+.rage-press p{margin:0 0 24px}
+.rage-director-note{margin-top:20px}
+.rage-notes-divider{border:0;border-top:1px solid #333;margin:28px 0 26px}
+.rage-conclusion{margin:0 0 25px}
+.rage-video-section{width:min(1315px,calc(100% - 24vw));margin:155px auto 0;}
+.rage-video-player{display:block;width:100%;aspect-ratio:16/9;background:#111;object-fit:contain}
+.rage-pagination{display:flex;justify-content:flex-end;align-items:center;padding:0 4vw;margin:190px auto 50px;width:100%;max-width:1800px;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(30px,2.7vw,52px);line-height:1.2}
+.rage-pagination a{display:flex;align-items:center;gap:30px;text-decoration:none}
+.rage-pagination a:hover{opacity:.75}
+.rage-pagination span{font-family:Georgia,serif;font-weight:300;font-size:1.35em}
+@media(max-width:950px){
+ .rage-story{width:90%;margin:0 auto;gap:5vw}
+ .rage-sketch-grid{width:90%;gap:5vw}
+ .rage-hero-content{width:88%;margin-left:6vw}
+ .rage-page .site-nav{background:#25201f}
+ .rage-page .site-nav>a,.rage-page .site-nav .drop-trigger{color:#fff}
+ .rage-video-section{width:90%;margin-top:100px}
+}
+@media(max-width:650px){
+ .rage-hero{min-height:93svh;background-position:center}
+ .rage-hero-content{transform:none;padding-top:95px}
+ .rage-hero h1{font-size:clamp(40px,9vw,58px);line-height:1.13}
+ .rage-eyebrow{font-size:18px;margin-bottom:25px}
+ .rage-sketch-section{padding:70px 0 75px}
+ .rage-sketch-grid,.rage-story{display:block;width:90%;margin:0 auto}
+ .rage-sketch-grid figure+figure{margin-top:36px}
+ .rage-sketch-grid figcaption{font-size:18px;margin:12px 0 0}
+ .rage-writing-ref{margin-top:50px;font-size:25px}
+ .rage-story-right{display:flex;flex-direction:column}
+ .rage-press{order:0;margin-top:32px}
+ .rage-red-costume{order:1}
+ .rage-director-note{order:2}
+ .rage-notes-divider{order:3}
+ .rage-conclusion{order:4}
+ .rage-text{font-size:19px;line-height:1.65}
+ .rage-press{font-size:16px;line-height:1.75}
+ .rage-dialogue{margin-top:32px;margin-bottom:28px}
+ .rage-interview{margin:25px 0}
+ .rage-video-section{margin-top:70px}
+ .rage-pagination{margin:80px 0 35px;font-size:27px;padding:0 5vw}
+}
+
+/* v12 final: explicit image heights avoid late shifts with lazy-loading. */
+.rage-sketch-grid img{height:auto;aspect-ratio:4/3;object-fit:cover}
+.rage-red-costume img{aspect-ratio:2500/1670;height:auto}
+.rage-interview img{aspect-ratio:2500/1882;height:auto}
+.rage-hero h1{max-width:1100px}
+/* Match the original opening text's vertical placement; keep mobile centered naturally. */
+@media(min-width:651px){.rage-hero-content{transform:translateY(124px)}}
+
+
+/* v14 Playwriting: recreated from the saved Squarespace playwriting page */
+.playwriting-page .writing-main{max-width:1540px; margin:0 auto; padding:108px 4vw 54px; display:grid; grid-template-columns:minmax(0,0.98fr) minmax(0,1.13fr); column-gap:6.8vw; align-items:start;}
+.writing-main figure{margin:0;}
+.writing-main h1{font-family:var(--serif);font-style:italic;font-size:clamp(42px,3.55vw,58px);line-height:1.1;font-weight:500;text-align:center;margin:0 0 30px;}
+.writing-overview{font-family:var(--nav-serif);font-size:clamp(19px,1.36vw,23px);font-weight:700;line-height:1.73;margin:0 0 26px;}
+.writing-interview{width:92%;margin:0 auto!important;}
+.writing-interview img,.writing-script img{display:block;width:100%;height:auto;}
+.writing-script img{background:#fff;}
+.writing-main figcaption{font-family:var(--nav-serif);font-size:clamp(18px,1.25vw,21px);line-height:1.75;text-align:center;font-style:italic;font-weight:700;margin:12px auto 0;max-width:640px;}
+.writing-main figcaption a{color:#234d84;text-decoration:underline;}
+.writing-projects{max-width:1540px;margin:0 auto;padding:55px 4vw 120px;}
+.writing-project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px;}
+.writing-project-card{display:block;position:relative;overflow:hidden;aspect-ratio:4 / 3;text-decoration:none;color:#fff;}
+.writing-project-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+.writing-project-card::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.78);opacity:0;transition:opacity .2s ease;}
+.writing-cover-label{position:absolute;z-index:1;top:50%;left:50%;width:95%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(26px,2.8vw,43px);font-weight:600;text-align:center;opacity:0;transition:opacity .2s ease;}
+.writing-project-card:hover::after,.writing-project-card:focus-visible::after,.writing-project-card:hover .writing-cover-label,.writing-project-card:focus-visible .writing-cover-label{opacity:1;}
+.writing-project-card:hover img{transform:scale(1.015);}
+.playwriting-detail-page .playwriting-detail,.historical-page{max-width:1500px;margin:0 auto;padding:130px 4vw 95px;}
+.playwriting-detail-page h1{font-family:var(--serif);font-style:italic;font-size:clamp(38px,3.45vw,58px);line-height:1.1;font-weight:500;text-align:center;margin:0 0 30px;}
+.new-york-detail h1{font-style:normal;font-size:clamp(34px,3vw,50px);}
+.new-york-intro{text-align:center;font-family:var(--nav-serif);font-size:clamp(20px,1.65vw,28px);font-weight:700;margin:0 0 45px;}
+.new-york-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:1200px;margin:0 auto;align-items:start;}
+.new-york-gallery figure{margin:0;}
+.new-york-gallery img{width:100%;height:auto;display:block;}
+.writing-next{max-width:1500px;margin:0 auto 65px;padding:45px 4vw 15px;display:flex;justify-content:flex-end;}
+.writing-next a{font-family:var(--serif);font-size:clamp(24px,2.7vw,43px);color:var(--ink);text-decoration:none;}
+.writing-next a:hover{text-decoration:underline;}
+.historical-page{max-width:1000px;padding-top:130px;}
+.historical-page h1{text-align:left;}
+.historical-deck{font-family:var(--serif);font-size:clamp(26px,2.35vw,38px);line-height:1.25;}
+.historical-page h2{font-family:var(--serif);font-size:clamp(25px,2vw,32px);margin:40px 0 10px;font-weight:600;}
+.historical-page p,.historical-sources{font-family:var(--nav-serif);font-size:clamp(18px,1.25vw,22px);line-height:1.7;}
+.historical-sources a{color:#234d84;overflow-wrap:anywhere;}
+@media(max-width:850px){
+ .playwriting-page .writing-main{display:flex;flex-direction:column;padding:65px 5vw 30px;gap:40px;}
+ .writing-main h1{text-align:left;}
+ .writing-main figcaption{font-size:19px;}
+ .writing-interview{width:100%;}
+ .writing-projects{padding:35px 5vw 70px;}
+ .writing-project-grid{grid-template-columns:1fr;gap:18px;}
+ .writing-project-card::after{opacity:.33;}
+ .writing-cover-label{opacity:1;}
+ .new-york-gallery{grid-template-columns:1fr;gap:25px;}
+ .playwriting-detail-page .playwriting-detail,.historical-page{padding:70px 5vw 50px;}
+ .writing-next{padding:25px 5vw 15px;}
+}
+
+
+/* v15 — Make page navigation visually stable while web fonts initialize.
+   Avoid a sudden fallback-to-webfont change in the site header. */
+.header-font-pending .site-header { visibility: hidden; }
+.site-header, .site-header .logo, .site-header .site-nav, .site-header .site-nav a,
+.site-header .drop-trigger { animation: none!important; transition: none!important; }
+.site-header .logo { line-height: 1.4; }
+.site-header .site-nav > a, .site-header .drop-trigger { line-height: 1.3; }
+/* Submenus sit just below their parent label with no floating-card offset. */
+@media (min-width: 851px) {
+ .site-nav .drop-menu {
+  top: calc(100% - 9px);
+  right: -7px;
+  left: auto;
+  min-width: 0;
+  padding: 5px 7px 7px;
+  gap: 2px;
+  box-shadow:none;
+  border:0;
+  background:var(--paper);
+ }
+ .site-nav .drop-menu a { padding:1px 0; }
+}
+/* Stage management belongs to the same gray paper palette as other pages. */
+.stage-page, .stage-page .site-header, .stage-page .drop-menu {
+ background:var(--paper);
+}
+/* Original Playwriting project grid has visible captions BELOW the images. */
+.playwriting-page .writing-projects {
+ max-width:none; width:100%; background:#fff;
+ padding:70px var(--page-gutter) 100px;
+}
+.writing-project-grid { max-width:1900px; margin:0 auto; gap:clamp(25px,3.8vw,90px); }
+.writing-project-entry { min-width:0; }
+.writing-project-card { aspect-ratio:4/3; }
+.writing-card-caption {
+ display:block;margin:18px 0 0;text-decoration:none;color:#171717;
+ font:500 clamp(24px,1.7vw,34px)/1.25 var(--serif);
+}
+.writing-card-caption:hover, .writing-card-caption:focus-visible {text-decoration:underline;}
+/* Glass Puppet: four full images, alternating alignment, no page heading. */
+.glass-page {background:var(--paper)}
+.glass-gallery {padding:122px 0 115px; display:flex;flex-direction:column;gap:clamp(36px,3vw,65px);overflow:hidden}
+.glass-shot {width:min(73vw,1230px);min-width:0;margin:0;}
+.glass-shot-left {margin-left:4vw;margin-right:auto}
+.glass-shot-right {margin-left:auto;margin-right:clamp(4vw,19.4vw,400px)}
+.glass-shot img {display:block;width:100%;height:auto;}
+/* Historical Background: complete text and numbered linked references. */
+.historical-page {max-width:1120px;margin:auto;padding:85px 5vw 110px}
+.historical-page .historical-title {font:500 clamp(45px,4.2vw,69px)/1.1 var(--serif);font-style:italic;text-align:center;margin:0 0 10px;}
+.historical-page .historical-subtitle {font:600 clamp(27px,2.55vw,39px)/1.2 var(--serif);text-align:center;margin:0 0 50px;}
+.historical-page p {font:500 clamp(19px,1.25vw,22px)/1.68 var(--nav-serif);margin:0 0 1.35em;}
+.historical-page p strong {font-weight:700}
+.historical-page .historical-references-title {font:600 clamp(28px,2.4vw,36px)/1.2 var(--serif);margin:60px 0 25px;}
+.historical-page .historical-sources {font:400 clamp(16px,1.05vw,18px)/1.55 var(--nav-serif);padding-left:1.8em;}
+.historical-page .historical-sources li {padding-left:.4em;margin-bottom:15px;scroll-margin-top:28px}
+.historical-page .note-link {font-size:.78em;vertical-align:super;color:#214f82;text-decoration:none;margin-left:2px;}
+.historical-page .note-link:hover {text-decoration:underline;}
+.historical-page .historical-sources a {color:#214f82}
+@media(max-width:850px) {
+ .writing-project-grid {grid-template-columns:1fr;}
+ .playwriting-page .writing-projects {padding:38px 5vw 70px;}
+ .writing-card-caption {font-size:26px;}
+ .glass-gallery {padding:62px 0 75px;gap:35px}
+ .glass-shot {width:87vw;}
+ .glass-shot-left{margin-left:5vw}
+ .glass-shot-right{margin-left:auto;margin-right:5vw}
+ .historical-page{padding:65px 6vw 75px}
+ .historical-page .historical-subtitle{margin-bottom:30px}
+}
+
+
+/* ===== v16: screenshot-led layout corrections (2026-10-26) ===== */
+/* Writing Her Rage: two images finish on the same visual baseline. */
+@media(min-width:851px){
+  .playwriting-page .writing-main{align-items:stretch;}
+  .playwriting-page .writing-left{display:flex;flex-direction:column;min-width:0;}
+  .playwriting-page .writing-right{display:flex;flex-direction:column;justify-content:flex-end;min-width:0;}
+  .playwriting-page .writing-interview{margin-top:auto!important;}
+  .playwriting-page .writing-interview figcaption,
+  .playwriting-page .writing-script figcaption{min-height:3.2em;box-sizing:border-box;}
+  .playwriting-page .writing-script{margin-top:auto!important;}
+  .playwriting-page .writing-interview img,
+  .playwriting-page .writing-script img{object-fit:contain;}
+}
+/* Stage Managing: reduce top blank space, equalize the top and bottom padding. */
+@media(min-width:1001px){
+  .stage-page .stage-panel{padding-top:clamp(85px,6.4vw,125px);padding-bottom:clamp(85px,6.4vw,125px);}
+}
+@media(min-width:601px) and (max-width:1000px){
+  .stage-page .stage-panel{padding-top:85px;padding-bottom:85px;}
+}
+/* Historical Background: the original uses a wide, left-aligned editorial column. */
+@media(min-width:851px){
+  .historical-page{max-width:none;width:calc(100% - 5.2vw);margin:0 auto;padding:90px 0 115px;}
+  .historical-page .historical-title{font-family:var(--serif);font-size:clamp(64px,5.05vw,84px);font-weight:500;font-style:normal;text-align:left;line-height:1.12;margin:0 0 48px;}
+  .historical-page .historical-subtitle{font-family:var(--serif);font-size:clamp(43px,3.65vw,64px);font-weight:500;text-align:left;line-height:1.16;margin:0 0 52px;}
+  .historical-page p{font-family:var(--nav-serif);font-size:clamp(22px,1.44vw,25px);font-weight:700;line-height:1.73;margin:0 0 1.2em;text-indent:0;}
+  .historical-page .historical-sources{font-size:clamp(18px,1.2vw,20px);line-height:1.6;max-width:1550px;}
+  .historical-page .historical-references-title{text-align:left;}
+}
+/* Her Rage: center the storytelling grid with equal outside margins. */
+@media(min-width:951px){
+  .rage-story{width:min(1440px,calc(100% - 10vw));max-width:1440px;margin-left:auto;margin-right:auto;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);column-gap:clamp(55px,5vw,90px);}
+}
+/* Her Rage in NY: primary intro styled like the original; two images share top/bottom lines. */
+@media(min-width:851px){
+  .playwriting-detail-page .new-york-detail{max-width:none;width:min(1490px,calc(100% - 11vw));margin:0 auto;padding:100px 0 80px;}
+  .new-york-detail h1{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;}
+  .new-york-intro{max-width:1150px;text-align:left;margin:0 auto 65px;font:500 clamp(44px,4.75vw,76px)/1.18 var(--serif);}
+  .new-york-gallery{max-width:none;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5.2vw,95px);align-items:stretch;}
+  .new-york-gallery figure{height:100%;}
+  .new-york-gallery img{display:block;width:100%;height:100%;object-fit:cover;}
+}
+/* Glass Puppet: paired alternating photographs now have matching outer margins. */
+@media(min-width:851px){
+  .glass-gallery{padding-inline:0;}
+  .glass-shot{width:min(73vw,1230px);}
+  .glass-shot-left{margin-left:5vw;margin-right:auto;}
+  .glass-shot-right{margin-left:auto;margin-right:5vw;}
+}
+@media(max-width:850px){
+  .glass-shot{width:90vw;}
+  .glass-shot-left{margin-left:5vw;margin-right:auto;}
+  .glass-shot-right{margin-left:auto;margin-right:5vw;}
+  .historical-page .historical-title{font-style:normal;text-align:left;margin-bottom:25px;font-size:clamp(43px,10vw,64px);}
+  .historical-page .historical-subtitle{text-align:left;font-weight:500;font-size:clamp(30px,7vw,45px);}
+  .historical-page p{font-weight:700;font-size:19px;line-height:1.65;}
+}
+
+/* v16 New York: reproduce the original deliberate two-line opening. */
+@media(min-width:851px){
+  .new-york-intro{width:min(1280px,100%);max-width:1280px;font-size:clamp(52px,4vw,68px);line-height:1.24;}
+}
+@media(max-width:850px){.ny-desktop-break{display:none;}}
+
+
+/* ===== v17: reference screenshot refinements ===== */
+/* Aranya: wide/light introductory serif, and truly square images. */
+@media (min-width: 851px) {
+  .aranya-panel {max-width:none;width:100%;padding:clamp(150px,10.45vw,215px) var(--page-gutter) 105px;}
+  .aranya-panel .featured-prose {max-width:none;width:100%;margin:0 0 clamp(95px,10.5vw,215px);}
+  .aranya-panel .featured-prose h4 {font-family:var(--serif);font-size:clamp(29px,1.75vw,36px);font-weight:500;line-height:1.36;margin:0;}
+  .aranya-panel .photo-grid {width:min(1600px,100%);max-width:1600px;margin:0 auto;gap:32px;align-items:start;}
+}
+.aranya-panel .photo-grid img {display:block;aspect-ratio:1/1;width:100%;height:auto;max-height:none;object-fit:cover;}
+/* Fanletter: match Her Rage's title positioning and spacing, without changing photos. */
+@media(min-width:851px){
+ .fanletter-hero-content{width:min(1500px,calc(100% - 24vw));max-width:none;margin-left:12vw;margin-right:auto;padding-top:0;transform:translateY(70px);}
+ .fanletter-hero h1{font-size:clamp(52px,4.7vw,90px);max-width:1380px;line-height:1.14;margin:0 0 55px;}
+ .fanletter-eyebrow{margin:0 0 55px;}
+}
+/* Homepage should occupy the same starting position via direct opening or brand link. */
+html:has(.home-page) {scroll-padding-top:0;}
+.home-page #site-top{scroll-margin-top:0;}
+.home-image {min-width:0;}
+.home-image img{max-width:100%;}
+/* Bio: target the original left-offset editorial column, preserving Garamond hierarchy. */
+@media(min-width:851px){
+  .bio-page .bio-panel {max-width:none;width:min(1176px,73vw);margin-left:13vw;margin-right:auto;padding:155px 0 135px;}
+  .bio-panel .bio-copy p{font-size:clamp(21px,1.16vw,23.5px);font-weight:700;line-height:1.67;}
+  .bio-panel .bio-statement{font-size:clamp(43px,2.4vw,49px);margin-bottom:42px;}
+  .bio-panel .bio-heading-row{margin-bottom:46px;}
+}
+/* New York production: center the large opening statement. */
+@media(min-width:851px){
+ .playwriting-detail-page .new-york-intro{text-align:center;margin-left:auto;margin-right:auto;}
+}
+/* Historical Background: smaller, readable body typography, retain sources and numbering. */
+@media(min-width:851px){
+ .historical-page p{font-size:clamp(18px,1vw,20px);font-weight:700;line-height:1.65;margin-bottom:1.25em;}
+ .historical-page .historical-sources{font-size:clamp(16px,.87vw,18px);line-height:1.55;}
+}
+@media(max-width:850px){
+ .historical-page p{font-size:17px;line-height:1.65;}
+ .aranya-panel .photo-grid img{max-height:none;}
+ .aranya-panel .featured-prose h4{font-size:clamp(26px,4vw,32px);line-height:1.4;font-weight:500;}
+}
+/* Fine matching from the supplied 2048px reference photographs. */
+@media(min-width:851px){
+ .aranya-panel{padding-top:clamp(175px,13.35vw,275px);}
+ .aranya-panel .featured-prose h4 span{font-family:Arial,sans-serif;font-size:.88em;font-weight:700;}
+ .fanletter-hero-content{margin-left:11.3vw;}
+ .fanletter-hero h1{margin-bottom:93px;}
+}
+
+
+/* ===== v18: final screenshot-matched spacing, project links, and captions ===== */
+/* Fanletter location, heading and scroll use the SAME spacing as Her Rage. */
+@media (min-width:851px) {
+  .fanletter-hero-content {
+    width:min(1250px,calc(100% - 24vw));
+    max-width:1250px;
+    margin-left:12vw;
+    margin-right:auto;
+    padding-top:0;
+    transform:translateY(124px);
+  }
+  .fanletter-eyebrow {margin:0 0 54px;line-height:1.4;}
+  .fanletter-hero h1 {
+    font-size:clamp(52px,4.7vw,85px);
+    max-width:1100px;
+    margin:0 0 55px;
+    line-height:1.16;
+  }
+  /* Align the stage directions vertically in the space between photos. */
+  .fanletter-excerpt {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    box-sizing:border-box;
+    padding-top:25px;
+    padding-bottom:25px;
+    gap:20px;
+  }
+  .fanletter-excerpt p {margin:0;}
+}
+/* Separate mobile content from the grid, preserving readable stage directions. */
+@media (max-width:850px) {
+  .fanletter-excerpt{padding:20px 0;}
+  .fanletter-excerpt p{margin-bottom:18px;}
+}
+/* Playwriting and Aranya start after a consistent, smaller gap below navigation. */
+@media (min-width:851px) {
+  .playwriting-page .writing-main {padding-top:clamp(38px,3.3vw,68px);}
+  .aranya-panel {padding-top:clamp(45px,3.5vw,72px);}
+  .aranya-panel .featured-prose {margin-bottom:clamp(65px,6.5vw,130px);}
+  /* Give Historical Background an inset reading column and a smaller top gap. */
+  .historical-page {
+    width:calc(100% - 16vw);
+    max-width:1680px;
+    margin:0 auto;
+    padding:clamp(38px,3.3vw,65px) 0 105px;
+  }
+}
+/* Original Squarespace-like project links below Research, Aranya and Glass Puppet. */
+.project-pager {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:42px;
+  margin:0 auto;
+  padding:90px 4vw 68px;
+  width:100%;
+  max-width:1920px;
+  min-height:220px;
+  font-family:var(--serif);
+  font-size:clamp(27px,2.8vw,54px);
+  font-weight:500;
+  line-height:1.12;
+}
+.project-pager-link{color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:28px;max-width:48%;}
+.project-pager-link:hover{opacity:.66;}
+.project-pager-left{text-align:left;margin-right:auto;}
+.project-pager-right{text-align:right;margin-left:auto;}
+.project-pager-arrow{font-family:Georgia,serif;font-weight:300;font-size:1.26em;line-height:1;flex-shrink:0;}
+.project-pager-name{overflow-wrap:normal;}
+/* Avoid double blank areas at the end of the research/Aranya/Glass galleries. */
+.research-panel:has(+ .project-pager){padding-bottom:30px;}
+.aranya-panel:has(+ .project-pager){padding-bottom:30px;}
+.glass-gallery:has(+ .project-pager){padding-bottom:30px;}
+/* Two design-sketch captions should share a smaller, uniform typographic style. */
+.rage-sketch-grid figcaption {
+  font-family:'EB Garamond',Georgia,serif;
+  font-size:clamp(16px,1.05vw,20px);
+  font-weight:600;
+  font-style:italic;
+  line-height:1.4;
+  margin:14px 0 0;
+  text-align:center;
+}
+/* Keep the title in the line beneath the sketches unbolded. */
+.rage-writing-ref{font-weight:400;}
+.rage-writing-ref .normal-weight-em,.rage-writing-ref a{font-weight:400;}
+@media(max-width:850px){
+  .project-pager{padding:45px 5vw 55px;font-size:clamp(22px,3.5vw,33px);gap:20px;min-height:150px;}
+  .project-pager-link{gap:10px;}
+  .rage-sketch-grid figcaption{font-size:17px;}
+}
+@media(max-width:600px){
+  .project-pager{display:flex;flex-direction:column;align-items:stretch;gap:18px;padding:35px 5vw 55px;min-height:0;}
+  .project-pager-link{max-width:100%;font-size:26px;}
+  .project-pager-right{align-self:flex-end;}
+  .historical-page{width:calc(100% - 12vw);}
+}
+
+/* v18 final optical alignment from rendered desktop checks */
+@media(min-width:851px){
+ .fanletter-excerpt{transform:translateY(-1.1em);}
+ .project-pager{font-size:clamp(27px,2.55vw,48px);}
+}
+
+
+/* ===== v19: Fanletter, New York and Her Rage detail refinements ===== */
+/* Center Fanletter's two-column photo/text composition with symmetrical side gutters. */
+@media (min-width: 851px) {
+  .fanletter-gallery {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Remove an old 20px nudge that moved the entire right column inward. */
+  .fanletter-gallery .fanletter-b3,
+  .fanletter-gallery .fanletter-excerpt,
+  .fanletter-gallery .fanletter-b5,
+  .fanletter-gallery .fanletter-b6 {
+    left: auto;
+    width: 100%;
+  }
+  /* Bring New York's opening closer to the shared Playwriting page spacing. */
+  .playwriting-detail-page .new-york-detail {
+    padding-top: clamp(38px, 3.3vw, 68px);
+  }
+  .new-york-intro .ny-work-title {
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+/* Keep the light-weight work title on narrow screens, too. */
+.new-york-intro .ny-work-title {font-weight:400;}
+
+/* Use the right column's available space to align the video's lower edge
+   with the adjacent concluding production photograph on desktop. */
+@media (min-width: 951px) {
+  .rage-story {align-items:stretch;}
+  .rage-story-right {display:flex;flex-direction:column;}
+  .rage-story-right .rage-video-inline {
+    width:100%;
+    max-width:none;
+    margin: auto 0 0;
+    padding-top: clamp(20px,2vw,35px);
+    box-sizing:border-box;
+    flex-shrink:0;
+    align-self:stretch;
+  }
+}
+@media (max-width:950px) {
+  .rage-story-right .rage-video-inline {
+    width:100%;
+    margin:36px 0 0;
+    padding:0;
+  }
+}
+.rage-story-right .rage-video-inline .rage-video-player {
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#171717;
+  object-fit:contain;
+}
+
+
+/* v20: Center the Writing Her Rage heading over BOTH columns. */
+.playwriting-page .writing-main > #writing-title {
+  grid-column:1 / -1;
+  width:100%;
+  text-align:center;
+  margin:0 0 30px;
+}
+@media (max-width:850px) {
+  .playwriting-page .writing-main > #writing-title {
+    text-align:center;
+    margin:0;
+  }
+}
